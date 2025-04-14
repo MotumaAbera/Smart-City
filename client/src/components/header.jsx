@@ -130,12 +130,8 @@ export default function Header() {
                 <img src={logo} alt="Boku Shanan Logo" className="h-full w-full object-contain" />
               </div>
               <div>
-                <h1 className="font-bold text-lg sm:text-xl md:text-2xl text-primary">Boku Shanan</h1>
-                <p className="text-xs sm:text-sm text-gray-500">
-                  {language === 'am' ? 'ክፍለ ከተማ አስተዳደር' : 
-                   language === 'or' ? 'Bulchiinsa Magaalattii Xiqqoo' : 
-                   'Sub-City Administration'}
-                </p>
+                <h1 className="font-bold text-lg sm:text-xl md:text-2xl text-primary">{t('websiteName')}</h1>
+                <p className="text-xs sm:text-sm text-gray-500">{t('subTitle')}</p>
               </div>
             </div>
             

@@ -12,14 +12,15 @@ export default function HeroSlider() {
   const { t, language } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
   
-  // Add translations for slider content
-  const sliderTranslations = {
-    en: {
-      slide1: {
-        title: 'Welcome to Boku Shanan Sub-City Administration',
-        description: 'Serving our community with excellence and innovation',
-        buttonText: 'Explore Our Services',
-      },
+  // Get translations from language context
+  const slides = [
+    {
+      image: img1,
+      title: t('heroSlide1Title'),
+      description: t('heroSlide1Description'),
+      buttonText: t('heroSlide1Button'),
+      buttonLink: '#services'
+    },
       slide2: {
         title: 'Modern Infrastructure & Development',
         description: 'Building a better future through sustainable development',

@@ -3,11 +3,27 @@ import { createContext, useContext, useState, useEffect } from 'react';
 // Define translations for the website
 const translations = {
   en: {
+    // Metadata
+    websiteName: "Boku Shanan",
+    subTitle: "Sub-City Administration",
+    
     // Header
     home: "Home",
     aboutUs: "About Us",
     services: "Services",
     news: "News",
+
+    // Hero Section
+    heroSlide1Title: "Welcome to Boku Shanan Sub-City Administration",
+    heroSlide1Description: "Serving our community with excellence and innovation",
+    heroSlide1Button: "Explore Our Services",
+    heroSlide2Title: "Modern Infrastructure & Development",
+    heroSlide2Description: "Building a better future through sustainable development",
+    heroSlide2Button: "View Our Projects",
+    heroSlide3Title: "Beautiful Parks & Public Spaces",
+    heroSlide3Description: "Enhancing quality of life through thoughtful urban planning",
+    heroSlide3Button: "Discover Our City",
+
     resources: "Resources",
     tourism: "Tourism",
     contact: "Contact",
