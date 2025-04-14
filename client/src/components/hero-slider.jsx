@@ -14,7 +14,7 @@ export default function HeroSlider() {
 
   const slides = [
     {
-      image: "/attached_assets/img4.jpg",
+      image: "/attached_assets/agri.jpg",
       title: "Baga Gara Waajjira Bulchiinsa Kutaa Magaalaa Bokkuu Shanan Nagaan Dhuftan",
       description: "Hawaasa keenya olaantummaa fi kalaqaan tajaajiluu",
       buttonText: "Tajaajila Keenya Qoradhaa",
