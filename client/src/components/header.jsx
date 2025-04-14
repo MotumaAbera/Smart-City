@@ -9,6 +9,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown, Mail, Phone } from "lucide-react";
 import { useLanguage } from "@/hooks/use-language";
+import logo from '@assets/logo.png';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -122,8 +123,8 @@ export default function Header() {
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-3">
-              <div className="h-14 w-14 rounded-full border-2 border-primary bg-primary/10 flex items-center justify-center">
-                <span className="text-primary font-bold text-lg">BS</span>
+              <div className="h-16 w-16 flex items-center justify-center">
+                <img src={logo} alt="Boku Shanan Logo" className="h-full w-full object-contain" />
               </div>
               <div>
                 <h1 className="font-bold text-lg sm:text-xl md:text-2xl text-primary">Boku Shanan</h1>

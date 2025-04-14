@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Header from "../components/header";
 import Footer from "../components/footer";
-import HeroSection from "../components/hero-section";
+import HeroSlider from "../components/hero-slider";
 import AboutSection from "../components/about-section";
 import ServicesSection from "../components/services-section";
 import NewsSection from "../components/news-section";
@@ -17,7 +17,7 @@ export default function HomePage() {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-grow">
-        <HeroSection />
+        <HeroSlider />
         <AboutSection />
         <ServicesSection />
         <NewsSection />
