@@ -190,43 +190,19 @@ export default function Header() {
           {mobileMenuOpen && (
             <div className="md:hidden mt-4 pb-4 border-t pt-4">
               <nav className="flex flex-col space-y-4">
-                {/* Main Navigation Links for Mobile */}
                 {navLinks.map((link) => (
-                  <div key={link.name} className="border-b pb-2">
-                    {link.dropdown ? (
-                      <div className="space-y-2">
-                        <div className="font-medium text-gray-800">
-                          {link.name}
-                        </div>
-                        <div className="pl-4 space-y-2">
-                          {link.dropdown.map((item) => (
-                            <a
-                              key={item.name}
-                              href={item.href}
-                              className="block text-gray-600 hover:text-primary"
-                              onClick={(e) => {
-                                e.preventDefault();
-                                handleNav(item.href);
-                              }}
-                            >
-                              {item.name}
-                            </a>
-                          ))}
-                        </div>
-                      </div>
-                    ) : (
-                      <a
-                        href={link.href}
-                        className="font-medium text-gray-800 hover:text-primary"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          handleNav(link.href);
-                        }}
-                      >
-                        {link.name}
-                      </a>
-                    )}
-                  </div>
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    className="font-medium text-gray-800 hover:text-primary px-4 py-2 border-b"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNav(link.href);
+                      setMobileMenuOpen(false);
+                    }}
+                  >
+                    {link.name}
+                  </a>
                 ))}
                 
                 {/* Additional Links */}
