@@ -9,8 +9,8 @@ export default function HeroSection() {
     {
       id: 1,
       image: "https://images.unsplash.com/photo-1530062845289-9109b2c9c868?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80",
-      title: "Welcome to Boku Shanan Sub-City Administration",
-      subtitle: "Transforming governance through digital innovation and citizen-centric services"
+      title: "Baga gara kutaa Bulchiinsa Magaalaa Bokkuu Shanan nagana dhuftan",
+      subtitle: "Hawaasa keenya olaantummaa fi kalaqaan tajaajiluu"
     },
     {
       id: 2,
@@ -105,7 +105,7 @@ export default function HeroSection() {
                   }
                 }}
               >
-                Our Services
+                Tajaajila Keenya Qoradhaa
               </Button>
               <Button
                 size="lg" 

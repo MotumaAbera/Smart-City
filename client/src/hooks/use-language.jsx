@@ -14,9 +14,9 @@ const translations = {
     news: "News",
 
     // Hero Section
-    heroSlide1Title: "Welcome to Boku Shanan Sub-City Administration",
-    heroSlide1Description: "Serving our community with excellence and innovation",
-    heroSlide1Button: "Explore Our Services",
+    heroSlide1Title: "Baga Gara Waajjira Bulchiinsa Kutaa Magaalaa Bokkuu Shanan Nagaan Dhuftan",
+    heroSlide1Description: "Hawaasa keenya olaantummaa fi kalaqaan tajaajiluu",
+    heroSlide1Button: "Tajaajila Keenya Qoradhaa",
     heroSlide2Title: "Modern Infrastructure & Development",
     heroSlide2Description: "Building a better future through sustainable development",
     heroSlide2Button: "View Our Projects",
