@@ -14,7 +14,7 @@ export default function HeroSlider() {
 
   const slides = [
     {
-      image: "/attached_assets/Pasted-Project-Proposal-Title-Digital-Transformation-of-Boku-Shanan-Sub-City-Administration-Website-and-1744612553769.jpg",
+      image: "/attached_assets/img3.jpg",
       title: "Baga Gara Waajjira Bulchiinsa Kutaa Magaalaa Bokkuu Shanan Nagaan Dhuftan",
       description: "Hawaasa keenya olaantummaa fi kalaqaan tajaajiluu",
       buttonText: "Tajaajila Keenya Qoradhaa",
