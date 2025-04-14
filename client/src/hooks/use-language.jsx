@@ -149,6 +149,10 @@ const translations = {
     sitemap: "የሳይት ካርታ",
   },
   or: {
+    // Metadata
+    websiteName: "Bokkuu Shanan",
+    subTitle: "Waajjira Bulchiinsa Kutaa Magaalaa",
+    
     // Header
     home: "Mana",
     aboutUs: "Waa'ee Keenya",
