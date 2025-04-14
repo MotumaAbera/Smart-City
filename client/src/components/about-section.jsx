@@ -1,37 +1,38 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useLanguage } from "@/hooks/use-language";
+import AnonymousAvatar from "./anonymous-avatar";
 
 export default function AboutSection() {
   const { t } = useLanguage();
   const leaders = [
     {
       id: 1,
-      name: "Ahmed Solomon",
+      name: "Abera Gemama",
       position: "Chief Administrator",
       bio: "Leading the strategic vision and administrative efforts of Boku Shanan Sub-City since 2021.",
-      imageUrl: "https://randomuser.me/api/portraits/men/32.jpg"
+      useAvatar: true
     },
     {
       id: 2,
-      name: "Sara Tesfaye",
+      name: "XXX YYYY",
       position: "Deputy Administrator",
       bio: "Overseeing public services and community development initiatives across all kebeles.",
-      imageUrl: "https://randomuser.me/api/portraits/women/44.jpg"
+      useAvatar: true
     },
     {
       id: 3,
-      name: "Daniel Bekele",
+      name: "AAA BBBB",
       position: "Director of Development",
       bio: "Coordinating infrastructure projects and urban development planning initiatives.",
-      imageUrl: "https://randomuser.me/api/portraits/men/46.jpg"
+      useAvatar: true
     },
     {
       id: 4,
-      name: "Tigist Abebe",
+      name: "CCCC DDDD",
       position: "Head of Finance",
       bio: "Managing budgets, financial planning, and resource allocation for all sub-city programs.",
-      imageUrl: "https://randomuser.me/api/portraits/women/68.jpg"
+      useAvatar: true
     }
   ];
 
@@ -77,8 +78,14 @@ export default function AboutSection() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {leaders.map(leader => (
               <Card key={leader.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
-                <div className="w-full h-48 overflow-hidden">
-                  <img src={leader.imageUrl} alt={leader.name} className="w-full h-full object-cover" />
+                <div className="w-full h-48 overflow-hidden bg-gray-100">
+                  {leader.useAvatar ? (
+                    <div className="w-full h-full flex items-center justify-center text-gray-400">
+                      <AnonymousAvatar />
+                    </div>
+                  ) : (
+                    <img src={leader.imageUrl} alt={leader.name} className="w-full h-full object-cover" />
+                  )}
                 </div>
                 <div className="p-4">
                   <h4 className="font-semibold text-lg text-gray-800">{leader.name}</h4>
