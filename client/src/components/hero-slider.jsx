@@ -4,23 +4,15 @@ import { Button } from '@/components/ui/button';
 import { ChevronRight, ChevronLeft } from 'lucide-react';
 
 // Import the images directly
-// Use direct path to images
-const img1 = '/attached_assets/im1.jpg';
-const img2 = '/attached_assets/img2.jpg';
-const img3 = '/attached_assets/img3.jpg';
+import img1 from '@assets/img1.jpg';
+import img2 from '@assets/img2.jpg';
+import img3 from '@assets/img3.jpg';
 
 export default function HeroSlider() {
   const { t, language } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
-    {
-      image: "/attached_assets/agri.jpg",
-      title: "Baga Gara Waajjira Bulchiinsa Kutaa Magaalaa Bokkuu Shanan Nagaan Dhuftan",
-      description: "Hawaasa keenya olaantummaa fi kalaqaan tajaajiluu",
-      buttonText: "Tajaajila Keenya Qoradhaa",
-      buttonLink: '#services'
-    },
     {
       image: img1,
       title: t('heroSlide1Title'),
