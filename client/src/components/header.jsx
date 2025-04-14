@@ -93,27 +93,30 @@ export default function Header() {
               +251-111-234-567
             </a>
           </div>
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="flex items-center space-x-4">
             <Link href="/auth" className="text-sm hover:text-accent-light">Staff Portal</Link>
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="link" className="text-sm text-white hover:text-accent-light p-0 h-auto">
-                  {t('language')}
-                  <ChevronDown className="ml-1 h-4 w-4" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                <DropdownMenuItem onSelect={() => changeLanguage('en')} className={language === 'en' ? 'bg-primary/10 font-medium' : ''}>
-                  English
-                </DropdownMenuItem>
-                <DropdownMenuItem onSelect={() => changeLanguage('am')} className={language === 'am' ? 'bg-primary/10 font-medium' : ''}>
-                  አማርኛ (Amharic)
-                </DropdownMenuItem>
-                <DropdownMenuItem onSelect={() => changeLanguage('or')} className={language === 'or' ? 'bg-primary/10 font-medium' : ''}>
-                  Afaan Oromoo
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <div className="flex items-center space-x-2">
+              <button 
+                onClick={() => changeLanguage('en')}
+                className={`text-sm px-2 py-1 rounded ${language === 'en' ? 'bg-white/20 text-white font-medium' : 'text-white/80 hover:text-white'}`}
+              >
+                EN
+              </button>
+              <span className="text-white/50">|</span>
+              <button 
+                onClick={() => changeLanguage('am')}
+                className={`text-sm px-2 py-1 rounded ${language === 'am' ? 'bg-white/20 text-white font-medium' : 'text-white/80 hover:text-white'}`}
+              >
+                አማ
+              </button>
+              <span className="text-white/50">|</span>
+              <button 
+                onClick={() => changeLanguage('or')}
+                className={`text-sm px-2 py-1 rounded ${language === 'or' ? 'bg-white/20 text-white font-medium' : 'text-white/80 hover:text-white'}`}
+              >
+                OR
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -228,24 +231,26 @@ export default function Header() {
                     {t('staffPortal')}
                   </Link>
                   <p className="text-sm font-medium mb-2">{t('language')}</p>
-                  <div className="flex flex-col space-y-2 pl-2">
+                  <div className="flex items-center space-x-2 pl-2">
                     <button 
-                      className={`text-sm ${language === 'en' ? 'text-primary font-medium' : 'text-gray-600'} hover:text-primary text-left`}
                       onClick={() => changeLanguage('en')}
+                      className={`text-sm px-2 py-1 rounded ${language === 'en' ? 'bg-primary/10 text-primary font-medium' : 'text-gray-600 hover:text-primary'}`}
                     >
-                      English
+                      EN
                     </button>
+                    <span className="text-gray-400">|</span>
                     <button 
-                      className={`text-sm ${language === 'am' ? 'text-primary font-medium' : 'text-gray-600'} hover:text-primary text-left`}
                       onClick={() => changeLanguage('am')}
+                      className={`text-sm px-2 py-1 rounded ${language === 'am' ? 'bg-primary/10 text-primary font-medium' : 'text-gray-600 hover:text-primary'}`}
                     >
-                      አማርኛ (Amharic)
+                      አማ
                     </button>
+                    <span className="text-gray-400">|</span>
                     <button 
-                      className={`text-sm ${language === 'or' ? 'text-primary font-medium' : 'text-gray-600'} hover:text-primary text-left`}
                       onClick={() => changeLanguage('or')}
+                      className={`text-sm px-2 py-1 rounded ${language === 'or' ? 'bg-primary/10 text-primary font-medium' : 'text-gray-600 hover:text-primary'}`}
                     >
-                      Afaan Oromoo
+                      OR
                     </button>
                   </div>
                 </div>
