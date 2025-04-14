@@ -34,7 +34,7 @@ export default function AboutSection() {
   ];
 
   return (
-    <section id="about" className="py-16 bg-white">
+    <section id="about" className="pt-32 pb-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-primary mb-4">About Boku Shanan Sub-City</h2>
