@@ -150,7 +150,7 @@ const translations = {
   },
   or: {
     // Metadata
-    websiteName: "Bokkuu Shanan",
+    websiteName: "Magaalattii Xiqqoo Boku Shanan",
     subTitle: "Waajjira Bulchiinsa Kutaa Magaalaa",
     
     // Header
