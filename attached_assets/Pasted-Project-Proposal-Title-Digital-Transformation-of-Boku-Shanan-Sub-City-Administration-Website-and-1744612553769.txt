@@ -1,0 +1,92 @@
+Project Proposal
+Title: Digital Transformation of Boku Shanan Sub City Administration – Website and
+Integrated Management System
+Boku Shanan Sub City Administration
+Executive Summary
+This proposal outlines the complete digital transformation plan for Boku Shanan SubCity
+Administration through the development of a dynamic, centralized, and responsive website along
+with an integrated management system. The platform aims to enhance administrative efficiency,
+promote transparency, digitize government services, and improve communication between the
+government and citizens.
+The project serves as a strategic milestone to reduce dependency on traditional paper-based
+workflows, improve citizen engagement, and enable evidence-based decision-making using realtime data insights.
+Project Objectives
+• Digitize Services & Operations: Convert manual services into digital platforms.
+• Centralized Evidence Repository: Archive scanned documents, Reports,letters, court
+decisions, and compensation records.
+• Public Communication Portal: Publish news, announcements, reports, and resources.
+• Interactive Visual Dashboard: Visualize population data, investments, project status, and
+workforce distribution.
+• Citizen Engagement Tools: Enable online feedback, appeals, complaints, and public
+ideas.
+• Promote Transparency: Publish reports, leadership info, and development milestones.
+• Cultural & Tourism Promotion: Feature historical sites, tourism locations, and
+investment opportunities.
+• Smart Governance Support: Enable real-time access to data for better leadership
+decisions.
+Key Features of the System & Website
+1. Public Website Portal
+• Visually engaging homepage with a dynamic slider.
+• Sub City Vision, Mission, Structure, and Leadership Profiles.
+• Newsroom: Posts, blogs, press releases, and policy briefs.
+• Multimedia Gallery: Photos and videos of key activities.
+• Tourism and Heritage showcase section.
+• Online forms for volunteering, complaints, and public support.
+• Public event calendar with registration and alerts.
+• Downloads center for documents, templates, and forms.
+2. Digital Administration Portal
+• Central dashboard with real-time performance metrics.
+• New employee record management
+• Secure login and role-based access control.
+• Document management system (upload, OCR, tagging, search).
+• Department-wise employee registry and performance logging.
+• Dynamic population registry (by kebele, age, gender, etc.).
+• Investment record management (by investor, project type).
+• Internal messaging and broadcast system for staff.
+• Application tracking (e.g., land use, business permits).
+• Digital archive of past decisions, memos, and directives.
+3. Community & Stakeholder Portal
+• Online registration for citizens, investors, and members.
+• Submit, track, and resolve complaints and appeals.
+• Access to city reports, budgets, and leadership decisions.
+• Engage in surveys, polls, and feedback on projects.
+• Public comment sections for new policies or initiatives.
+• Digital inbox for citizens to receive updates and notices.
+4. Data Visualization & Reporting System
+• Dashboards with customizable filters (year, kebele, sector).
+• Visuals for:
+o Population distribution & growth trends.
+o Employment and departmental structure.
+o Land ownership and compensation history.
+o Utility/resource allocation (education, water, energy).
+• Exportable reports in PDF/Excel for meetings and audits.
+• API-ready backend for future expansion (e.g., to mobile apps).
+Key Modules Overview
+Module Description
+Website Content
+Management
+Admin-friendly interface to manage public content,
+announcements, galleries, and forms.
+Evidence Management
+Scan, categorize, and store legal documents, decisions, and
+records with full tagging.
+Citizen Service Hub
+Submission and tracking of service requests, complaints, and
+appeals.
+Membership & Leadership
+Directory
+Manage leadership hierarchy, contact info, and party affiliations.
+Training & Education
+Host digital ICT and administrative training content for staff and
+public.
+Tourism & Promotion Hub
+Display cultural attractions and advertise local business
+opportunities.
+Analytics Engine
+Visual data dashboards, real-time performance metrics, and
+planning tools.
+Communication Module SMS/email broadcasting, internal chats, meeting scheduling.
+Historical & Legal Archive Digitized Reports,legacy archives
+Volunteering & Civic
+Participation
+Public engagement, recruitment, tracking of contributions.
