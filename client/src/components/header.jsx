@@ -88,9 +88,9 @@ export default function Header() {
               <Mail className="h-4 w-4 mr-1" />
               info@bokushanan.gov.et
             </a>
-            <a href="tel:+251 95 101 2219" className="text-sm hover:text-accent-light flex items-center">
+            <a href="tel:+251-111-234-567" className="text-sm hover:text-accent-light flex items-center">
               <Phone className="h-4 w-4 mr-1" />
-              +251 95 101 2219
+              +251-111-234-567
             </a>
           </div>
           <div className="flex items-center space-x-4">
