@@ -4,9 +4,10 @@ import { Button } from '@/components/ui/button';
 import { ChevronRight, ChevronLeft } from 'lucide-react';
 
 // Import the images directly
-import img1 from '@assets/img1.jpg';
-import img2 from '@assets/img2.jpg';
-import img3 from '@assets/img3.jpg';
+// Use direct path to images
+const img1 = '/attached_assets/im1.jpg';
+const img2 = '/attached_assets/img2.jpg';
+const img3 = '/attached_assets/img3.jpg';
 
 export default function HeroSlider() {
   const { t, language } = useLanguage();
