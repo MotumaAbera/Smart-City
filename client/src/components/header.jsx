@@ -29,6 +29,7 @@ export default function Header() {
     };
   }, []);
 
+  // Main navigation links - same links for desktop and mobile
   const navLinks = [
     { name: "Home", href: "/" },
     { 
@@ -171,10 +172,11 @@ export default function Header() {
           
           {/* Mobile Navigation Menu */}
           {mobileMenuOpen && (
-            <div className="md:hidden mt-4 pb-4">
+            <div className="md:hidden mt-4 pb-4 border-t pt-4">
               <nav className="flex flex-col space-y-4">
+                {/* Main Navigation Links for Mobile */}
                 {navLinks.map((link) => (
-                  <div key={link.name}>
+                  <div key={link.name} className="border-b pb-2">
                     {link.dropdown ? (
                       <div className="space-y-2">
                         <div className="font-medium text-gray-800">
@@ -210,11 +212,13 @@ export default function Header() {
                     )}
                   </div>
                 ))}
-                <Link href="/auth" className="font-medium text-gray-800 hover:text-primary pt-2">
-                  Staff Portal
-                </Link>
+                
+                {/* Additional Links */}
                 <div className="pt-2">
-                  <p className="text-sm font-medium mb-1">Language</p>
+                  <Link href="/auth" className="block font-medium text-gray-800 hover:text-primary mb-4">
+                    Staff Portal
+                  </Link>
+                  <p className="text-sm font-medium mb-2">Language</p>
                   <div className="flex space-x-4 pl-2">
                     <button className="text-sm text-gray-600 hover:text-primary">English</button>
                     <button className="text-sm text-gray-600 hover:text-primary">Amharic</button>
