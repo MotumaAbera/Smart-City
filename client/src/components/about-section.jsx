@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { useLanguage } from "@/hooks/use-language";
 
 export default function AboutSection() {
+  const { t } = useLanguage();
   const leaders = [
     {
       id: 1,
@@ -37,9 +39,9 @@ export default function AboutSection() {
     <section id="about" className="pt-32 pb-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-primary mb-4">About Boku Shanan Sub-City</h2>
+          <h2 className="text-3xl font-bold text-primary mb-4">{t('aboutTitle')}</h2>
           <p className="text-gray-500 max-w-3xl mx-auto">
-            Discover our vision, mission, leadership, and the transformative initiatives that are shaping our community's future.
+            {t('aboutDescription')}
           </p>
         </div>
         
@@ -52,26 +54,26 @@ export default function AboutSection() {
           <div>
             <h3 className="text-2xl font-semibold text-primary mb-4">Our Vision & Mission</h3>
             <div className="mb-6">
-              <h4 className="font-semibold text-lg text-gray-800 mb-2">Vision</h4>
+              <h4 className="font-semibold text-lg text-gray-800 mb-2">{t('vision')}</h4>
               <p className="text-gray-500">
-                To become a model sub-city with transparent, accountable, and efficient governance that empowers citizens and promotes sustainable development.
+                {t('visionText')}
               </p>
             </div>
             <div className="mb-6">
-              <h4 className="font-semibold text-lg text-gray-800 mb-2">Mission</h4>
+              <h4 className="font-semibold text-lg text-gray-800 mb-2">{t('mission')}</h4>
               <p className="text-gray-500">
-                We are committed to providing accessible, reliable, and effective public services through innovative digital solutions and citizen engagement, ensuring inclusive growth and improved quality of life for all residents.
+                {t('missionText')}
               </p>
             </div>
             <Button className="bg-primary hover:bg-primary-dark text-white font-semibold transition duration-300">
-              Learn More About Us
+              {t('learnMore')}
             </Button>
           </div>
         </div>
         
         {/* Leadership Section */}
         <div className="mt-16">
-          <h3 className="text-2xl font-semibold text-primary mb-8 text-center">Our Leadership</h3>
+          <h3 className="text-2xl font-semibold text-primary mb-8 text-center">{t('ourLeadership')}</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {leaders.map(leader => (
               <Card key={leader.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
@@ -83,7 +85,7 @@ export default function AboutSection() {
                   <p className="text-secondary-dark font-medium text-sm mb-2">{leader.position}</p>
                   <p className="text-gray-500 text-sm mb-3">{leader.bio}</p>
                   <Button variant="link" className="text-primary text-sm font-medium hover:text-accent px-0">
-                    View Profile →
+                    {t('viewProfile')} →
                   </Button>
                 </div>
               </Card>
@@ -91,7 +93,7 @@ export default function AboutSection() {
           </div>
           <div className="text-center mt-8">
             <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white font-semibold">
-              View All Leadership
+              {t('viewAllLeadership')}
             </Button>
           </div>
         </div>

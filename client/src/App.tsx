@@ -11,6 +11,7 @@ import PopulationManagement from "@/pages/population-management";
 import InvestmentManagement from "@/pages/investment-management";
 import EmployeeManagement from "@/pages/employee-management";
 import { AuthProvider } from "./hooks/use-auth";
+import { LanguageProvider } from "./hooks/use-language";
 import { ProtectedRoute } from "./lib/protected-route";
 
 function Router() {
@@ -32,8 +33,10 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
-        <Router />
-        <Toaster />
+        <LanguageProvider>
+          <Router />
+          <Toaster />
+        </LanguageProvider>
       </AuthProvider>
     </QueryClientProvider>
   );

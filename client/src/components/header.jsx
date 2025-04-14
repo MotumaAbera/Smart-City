@@ -8,11 +8,13 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown, Mail, Phone } from "lucide-react";
+import { useLanguage } from "@/hooks/use-language";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [, navigate] = useLocation();
   const [scrolled, setScrolled] = useState(false);
+  const { language, changeLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,9 +33,9 @@ export default function Header() {
 
   // Main navigation links - same links for desktop and mobile
   const navLinks = [
-    { name: "Home", href: "/" },
+    { name: t('home'), href: "/" },
     { 
-      name: "About Us", 
+      name: t('aboutUs'), 
       href: "#about",
       dropdown: [
         { name: "Vision & Mission", href: "#about" },
@@ -42,10 +44,10 @@ export default function Header() {
         { name: "History", href: "#about" }
       ]
     },
-    { name: "Services", href: "#services" },
-    { name: "News", href: "#news" },
+    { name: t('services'), href: "#services" },
+    { name: t('news'), href: "#news" },
     { 
-      name: "Resources", 
+      name: t('resources'), 
       href: "#resources",
       dropdown: [
         { name: "Documents", href: "#" },
@@ -53,8 +55,8 @@ export default function Header() {
         { name: "Reports", href: "#" }
       ]
     },
-    { name: "Tourism", href: "#tourism" },
-    { name: "Contact", href: "#contact" }
+    { name: t('tourism'), href: "#tourism" },
+    { name: t('contact'), href: "#contact" }
   ];
 
   const toggleMobileMenu = () => {
@@ -95,14 +97,20 @@ export default function Header() {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="link" className="text-sm text-white hover:text-accent-light p-0 h-auto">
-                  Language
+                  {t('language')}
                   <ChevronDown className="ml-1 h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuItem>English</DropdownMenuItem>
-                <DropdownMenuItem>Amharic</DropdownMenuItem>
-                <DropdownMenuItem>Oromo</DropdownMenuItem>
+                <DropdownMenuItem onSelect={() => changeLanguage('en')} className={language === 'en' ? 'bg-primary/10 font-medium' : ''}>
+                  English
+                </DropdownMenuItem>
+                <DropdownMenuItem onSelect={() => changeLanguage('am')} className={language === 'am' ? 'bg-primary/10 font-medium' : ''}>
+                  አማርኛ (Amharic)
+                </DropdownMenuItem>
+                <DropdownMenuItem onSelect={() => changeLanguage('or')} className={language === 'or' ? 'bg-primary/10 font-medium' : ''}>
+                  Afaan Oromoo
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
@@ -216,13 +224,28 @@ export default function Header() {
                 {/* Additional Links */}
                 <div className="pt-2">
                   <Link href="/auth" className="block font-medium text-gray-800 hover:text-primary mb-4">
-                    Staff Portal
+                    {t('staffPortal')}
                   </Link>
-                  <p className="text-sm font-medium mb-2">Language</p>
-                  <div className="flex space-x-4 pl-2">
-                    <button className="text-sm text-gray-600 hover:text-primary">English</button>
-                    <button className="text-sm text-gray-600 hover:text-primary">Amharic</button>
-                    <button className="text-sm text-gray-600 hover:text-primary">Oromo</button>
+                  <p className="text-sm font-medium mb-2">{t('language')}</p>
+                  <div className="flex flex-col space-y-2 pl-2">
+                    <button 
+                      className={`text-sm ${language === 'en' ? 'text-primary font-medium' : 'text-gray-600'} hover:text-primary text-left`}
+                      onClick={() => changeLanguage('en')}
+                    >
+                      English
+                    </button>
+                    <button 
+                      className={`text-sm ${language === 'am' ? 'text-primary font-medium' : 'text-gray-600'} hover:text-primary text-left`}
+                      onClick={() => changeLanguage('am')}
+                    >
+                      አማርኛ (Amharic)
+                    </button>
+                    <button 
+                      className={`text-sm ${language === 'or' ? 'text-primary font-medium' : 'text-gray-600'} hover:text-primary text-left`}
+                      onClick={() => changeLanguage('or')}
+                    >
+                      Afaan Oromoo
+                    </button>
                   </div>
                 </div>
               </nav>
