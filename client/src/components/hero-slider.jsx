@@ -14,6 +14,13 @@ export default function HeroSlider() {
 
   const slides = [
     {
+      image: "https://images.unsplash.com/photo-1530062845289-9109b2c9c868?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80",
+      title: "Baga gara kutaa Bulchiinsa Magaalaa Bokkuu Shanan nagana dhuftan",
+      description: "Hawaasa keenya olaantummaa fi kalaqaan tajaajiluu",
+      buttonText: "Tajaajila Keenya Qoradhaa",
+      buttonLink: '#services'
+    },
+    {
       image: img1,
       title: t('heroSlide1Title'),
       description: t('heroSlide1Description'),
