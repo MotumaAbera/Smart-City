@@ -14,7 +14,7 @@ const translations = {
     news: "News",
 
     // Hero Section
-    heroSlide1Title: "Baga gara kutaa Bulchiinsa Magaalaa Bokkuu Shanan nagana dhuftan",
+    heroSlide1Title: "Baga Gara Waajjira Bulchiinsa Kutaa Magaalaa Bokkuu Shanan Nagaan Dhuftan",
     heroSlide1Description: "Hawaasa keenya olaantummaa fi kalaqaan tajaajiluu",
     heroSlide1Button: "Tajaajila Keenya Qoradhaa",
     heroSlide2Title: "Modern Infrastructure & Development",
