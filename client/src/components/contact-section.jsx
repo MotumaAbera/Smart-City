@@ -84,9 +84,9 @@ export default function ContactSection() {
                   <Phone className="text-primary mr-4 h-6 w-6" />
                   <div>
                     <h4 className="font-medium text-gray-800 mb-1">Call Us</h4>
-                    <p className="text-gray-500">Main Office: +251-111-234-567</p>
-                    <p className="text-gray-500">Public Services: +251-111-234-568</p>
-                    <p className="text-gray-500">Emergency: +251-111-234-569</p>
+                    <p className="text-gray-500">Main Office: +251 95 101 2219</p>
+                    <p className="text-gray-500">Public Services: +251 95 101 2219</p>
+                    <p className="text-gray-500">Emergency: +251 95 101 2219</p>
                   </div>
                 </div>
                 
