@@ -39,8 +39,8 @@ export default function Header() {
       name: t('aboutUs'), 
       href: "#about",
       dropdown: [
-        { name: "Vision & Mission", href: "#about" },
-        { name: "Leadership", href: "#about" },
+        { name: t('vision') + " & " + t('mission'), href: "#about" },
+        { name: t('ourLeadership'), href: "#about" },
         { name: "Organizational Structure", href: "#about" },
         { name: "History", href: "#about" }
       ]
@@ -51,9 +51,9 @@ export default function Header() {
       name: t('resources'), 
       href: "#resources",
       dropdown: [
-        { name: "Documents", href: "#" },
-        { name: "Forms", href: "#" },
-        { name: "Reports", href: "#" }
+        { name: "Documents", href: "#resources" },
+        { name: "Forms", href: "#resources" },
+        { name: "Reports", href: "#resources" }
       ]
     },
     { name: t('tourism'), href: "#tourism" },
@@ -131,7 +131,11 @@ export default function Header() {
               </div>
               <div>
                 <h1 className="font-bold text-lg sm:text-xl md:text-2xl text-primary">Boku Shanan</h1>
-                <p className="text-xs sm:text-sm text-gray-500">Sub-City Administration</p>
+                <p className="text-xs sm:text-sm text-gray-500">
+                  {language === 'am' ? 'ክፍለ ከተማ አስተዳደር' : 
+                   language === 'or' ? 'Bulchiinsa Magaalattii Xiqqoo' : 
+                   'Sub-City Administration'}
+                </p>
               </div>
             </div>
             

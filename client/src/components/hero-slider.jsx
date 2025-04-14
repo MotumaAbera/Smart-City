@@ -9,30 +9,88 @@ import img2 from '@assets/img2.jpg';
 import img3 from '@assets/img3.jpg';
 
 export default function HeroSlider() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
   
+  // Add translations for slider content
+  const sliderTranslations = {
+    en: {
+      slide1: {
+        title: 'Welcome to Boku Shanan Sub-City Administration',
+        description: 'Serving our community with excellence and innovation',
+        buttonText: 'Explore Our Services',
+      },
+      slide2: {
+        title: 'Modern Infrastructure & Development',
+        description: 'Building a better future through sustainable development',
+        buttonText: 'View Our Projects',
+      },
+      slide3: {
+        title: 'Beautiful Parks & Public Spaces',
+        description: 'Enhancing quality of life through thoughtful urban planning',
+        buttonText: 'Discover Our City',
+      }
+    },
+    am: {
+      slide1: {
+        title: 'እንኳን ወደ ቦኩ ሻናን ክፍለ ከተማ አስተዳደር በደህና መጡ',
+        description: 'ማህበረሰባችንን በልቀትና በአዲስ ሀሳብ እያገለገልን ነው',
+        buttonText: 'አገልግሎቶቻችንን ይመልከቱ',
+      },
+      slide2: {
+        title: 'ዘመናዊ መሰረተ ልማትና ልማት',
+        description: 'ዘላቂ ልማት በማካሄድ የተሻለ የወደፊት ሕይወት እንገነባለን',
+        buttonText: 'ፕሮጀክቶቻችንን ይመልከቱ',
+      },
+      slide3: {
+        title: 'ቆንጆ ፓርኮችና የህዝብ ቦታዎች',
+        description: 'በጥንቃቄ የተደረገ የከተማ እቅድ ዝግጅት የኑሮ ጥራትን እናሻሽላለን',
+        buttonText: 'ከተማችንን ይመልከቱ',
+      }
+    },
+    or: {
+      slide1: {
+        title: 'Bulchiinsa Magaalattii Xiqqoo Boku Shanan Baga Nagaan Dhuftan',
+        description: 'Hawaasa keenyaaf gahumsa fi haaromsa waliin tajaajilaa jirra',
+        buttonText: 'Tajaajilawwan Keenya Ilaali',
+      },
+      slide2: {
+        title: 'Bu\'uuraalee Misoomaa fi Misooma Ammayyaa',
+        description: 'Misooma dhaabbataa fayyadamuun gara fuulduraatti kan fooyya\'e ijaaraa jirra',
+        buttonText: 'Piroojektiwwan Keenya Ilaali',
+      },
+      slide3: {
+        title: 'Paarkiiwwanii fi Iddoowwan Uummataa Bareedaa',
+        description: 'Karoora magaalaa xiyyeeffannoo qabuun qulqullina jireenya fooyyessaa jirra',
+        buttonText: 'Magaalaa Keenya Ilaali',
+      }
+    }
+  };
+
+  // Get current translation based on language
+  const currentTranslation = sliderTranslations[language] || sliderTranslations.en;
+
   // Slider content
   const slides = [
     {
       image: img1,
-      title: 'Welcome to Boku Shanan Sub-City Administration',
-      description: 'Serving our community with excellence and innovation',
-      buttonText: 'Explore Our Services',
+      title: currentTranslation.slide1.title,
+      description: currentTranslation.slide1.description,
+      buttonText: currentTranslation.slide1.buttonText,
       buttonLink: '#services'
     },
     {
       image: img2,
-      title: 'Modern Infrastructure & Development',
-      description: 'Building a better future through sustainable development',
-      buttonText: 'View Our Projects',
+      title: currentTranslation.slide2.title,
+      description: currentTranslation.slide2.description,
+      buttonText: currentTranslation.slide2.buttonText,
       buttonLink: '#about'
     },
     {
       image: img3,
-      title: 'Beautiful Parks & Public Spaces',
-      description: 'Enhancing quality of life through thoughtful urban planning',
-      buttonText: 'Discover Our City',
+      title: currentTranslation.slide3.title,
+      description: currentTranslation.slide3.description,
+      buttonText: currentTranslation.slide3.buttonText,
       buttonLink: '#tourism'
     }
   ];
