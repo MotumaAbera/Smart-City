@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { useAuth } from "@/hooks/use-auth";
-import { Button } from "@/components/ui/button";
+import { Button } from "../ui/button";
 import {
   LayoutDashboard,
   FileText,
@@ -32,6 +32,18 @@ export default function Sidebar() {
 
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  // Place logo at the top of the sidebar
+  // You can replace the SVG below with an <img src="/path/to/logo.png" /> if you add a real logo file
+  const Logo = () => (
+    <div className="flex items-center justify-center py-6">
+      <svg width="44" height="44" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="24" cy="24" r="22" fill="#e11d27" stroke="#191919" strokeWidth="2" />
+        <text x="50%" y="56%" textAnchor="middle" fill="#fff" fontSize="18" fontWeight="bold" dy=".3em">BS</text>
+      </svg>
+      <span className="ml-2 text-xl font-bold text-primary">Boku Shanan</span>
+    </div>
+  );
 
   const menuItems = [
     { 
@@ -69,6 +81,7 @@ export default function Sidebar() {
 
   return (
     <div className={`bg-gray-900 text-white h-screen flex flex-col transition-all duration-300 ${collapsed ? 'w-16' : 'w-64'}`}>
+      <Logo />
       <div className="p-4 border-b border-gray-800 flex items-center justify-between">
         {!collapsed && (
           <div className="font-bold text-lg">Boku Shanan</div>

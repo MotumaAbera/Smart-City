@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
-import { useLanguage } from '@/hooks/use-language';
-import { Button } from '@/components/ui/button';
+import { useLanguage } from '../hooks/use-language';
+import { Button } from './ui/button';
 import { ChevronRight, ChevronLeft } from 'lucide-react';
 
 // Import the images directly
-import img1 from '@assets/img1.jpg';
-import img2 from '@assets/img2.jpg';
-import img3 from '@assets/img3.jpg';
+import pic1 from '../assets/pic1.png';
+import pic2 from '../assets/pic2.png';
+import pic3 from '../assets/pic3.png';
+import pic4 from '../assets/pic4.png';
+import pic5 from '../assets/pic5.png';
 
 export default function HeroSlider() {
   const { t, language } = useLanguage();
@@ -14,32 +16,39 @@ export default function HeroSlider() {
 
   const slides = [
     {
-      image: "https://images.unsplash.com/photo-1530062845289-9109b2c9c868?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80",
-      title: "Baga Gara Waajjira Bulchiinsa Kutaa Magaalaa Bokkuu Shanan Nagaan Dhuftan",
-      description: "Hawaasa keenya olaantummaa fi kalaqaan tajaajiluu",
-      buttonText: "Tajaajila Keenya Qoradhaa",
+      image: pic1,
+      title: t('Baga Gara Waajjira Bulchiinsa Kutaa Magaalaa Bokkuu Shanan Nagaan Dhuftan'),
+      description: t('Boku Shanan Sub-City'),
+      buttonText: t('show more'),
       buttonLink: '#services'
     },
     {
-      image: img1,
-      title: t('heroSlide1Title'),
-      description: t('heroSlide1Description'),
-      buttonText: t('heroSlide1Button'),
-      buttonLink: '#services'
-    },
-    {
-      image: img2,
-      title: t('heroSlide2Title'),
-      description: t('heroSlide2Description'),
-      buttonText: t('heroSlide2Button'),
+      image: pic2,
+      title: t('Baga Gara Waajjira Bulchiinsa Kutaa Magaalaa Bokkuu Shanan Nagaan Dhuftan'),
+      description: t('Boku Shanan'),
+      buttonText: t('Contact Us'),
       buttonLink: '#about'
     },
     {
-      image: img3,
-      title: t('heroSlide3Title'),
-      description: t('heroSlide3Description'),
-      buttonText: t('heroSlide3Button'),
-      buttonLink: '#tourism'
+      image: pic3,
+      title: t('Boku Shanan Sub-City'),
+      description: t('Boku Shanan'),
+      buttonText: t('Learn More'),
+      buttonLink: '#about'
+    },
+    {
+      image: pic4,
+      title: t('Boku Shanan Sub-City'),
+      description: t('Boku Shanan'),
+      buttonText: t('Learn More'),
+      buttonLink: '#about'
+    },
+    {
+      image: pic5,
+      title: t('Boku Shanan Sub-City'),
+      description: t('Boku Shanan'),
+      buttonText: t('Learn More'),
+      buttonLink: '#about'
     }
   ];
 

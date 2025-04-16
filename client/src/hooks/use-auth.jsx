@@ -4,7 +4,7 @@ import {
   useMutation,
 } from "@tanstack/react-query";
 import { getQueryFn, apiRequest, queryClient } from "../lib/queryClient";
-import { useToast } from "@/hooks/use-toast";
+import { useToast } from "./use-toast";
 import { useLocation } from "wouter";
 
 export const AuthContext = createContext(null);
@@ -24,8 +24,22 @@ export function AuthProvider({ children }) {
 
   const loginMutation = useMutation({
     mutationFn: async (credentials) => {
-      const res = await apiRequest("POST", "/api/login", credentials);
-      return await res.json();
+      // --- MOCK FUNCTIONAL LOGIN (remove this block if you have a real backend) ---
+      const ADMIN_USERS = [
+        { username: "admin", password: "admin123", role: "admin" },
+        { username: "superuser", password: "superpass", role: "admin" },
+      ];
+      const user = ADMIN_USERS.find(
+        (u) => u.username === credentials.username && u.password === credentials.password
+      );
+      if (!user) {
+        throw new Error("Invalid credentials");
+      }
+      return { username: user.username, role: user.role };
+      // --- END MOCK ---
+      // Uncomment below to use real backend:
+      // const res = await apiRequest("POST", "/api/login", credentials);
+      // return await res.json();
     },
     onSuccess: (user) => {
       queryClient.setQueryData(["/api/user"], user);
@@ -33,7 +47,7 @@ export function AuthProvider({ children }) {
         title: "Login successful",
         description: `Welcome back, ${user.username}!`,
       });
-      navigate("/admin");
+      navigate("/admin-dashboard");
     },
     onError: (error) => {
       toast({

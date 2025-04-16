@@ -12,23 +12,12 @@ const translations = {
     aboutUs: "About Us",
     services: "Services",
     news: "News",
-
-    // Hero Section
-    heroSlide1Title: "Baga Gara Waajjira Bulchiinsa Kutaa Magaalaa Bokkuu Shanan Nagaan Dhuftan",
-    heroSlide1Description: "Hawaasa keenya olaantummaa fi kalaqaan tajaajiluu",
-    heroSlide1Button: "Tajaajila Keenya Qoradhaa",
-    heroSlide2Title: "Modern Infrastructure & Development",
-    heroSlide2Description: "Building a better future through sustainable development",
-    heroSlide2Button: "View Our Projects",
-    heroSlide3Title: "Beautiful Parks & Public Spaces",
-    heroSlide3Description: "Enhancing quality of life through thoughtful urban planning",
-    heroSlide3Button: "Discover Our City",
-
     resources: "Resources",
     tourism: "Tourism",
     contact: "Contact",
     staffPortal: "Staff Portal",
     language: "Language",
+    documents: "Documents",
     
     // About section
     aboutTitle: "About Boku Shanan Sub-City",
@@ -59,6 +48,14 @@ const translations = {
     tourismDescription: "Discover the rich cultural heritage, historical sites, and natural beauty of Boku Shanan Sub-City.",
     exploreMore: "Explore More",
     viewAllAttractions: "View All Attractions",
+    
+    // Project section
+    projects: "Projects",
+    roadConstruction: "Road Construction",
+    waterSupply: "Water Supply",
+    schoolBuildings: "School Buildings",
+    communityCenters: "Community Centers",
+    greenSpaces: "Green Spaces",
     
     // Contact section
     contactTitle: "Contact Us",
@@ -94,6 +91,7 @@ const translations = {
     contact: "ያግኙን",
     staffPortal: "የሰራተኞች ፖርታል",
     language: "ቋንቋ",
+    documents: "ሃብቶች",
     
     // About section
     aboutTitle: "ስለ ቦኩ ሻናን ክፍለ ከተማ",
@@ -118,6 +116,14 @@ const translations = {
     newsDescription: "ከቦኩ ሻናን ክፍለ ከተማ አስተዳደር የቅርብ ጊዜ ዜናዎችን፣ ዝግጅቶችን እና ማስታወቂያዎችን ይከታተሉ።",
     readMore: "ተጨማሪ ያንብቡ",
     viewAllNews: "ሁሉንም ዜናዎች ይመልከቱ",
+    
+    // Project section
+    projects: "ፕሮጀክቶች",
+    roadConstruction: "የመንገድ ሥራዎች",
+    waterSupply: "የውሃ አቅርቦት",
+    schoolBuildings: "የትምህርት ቤቶች",
+    communityCenters: "የማህበረሰብ ማዕከላት",
+    greenSpaces: "አረንጓዴ ቦታዎች",
     
     // Tourism section
     tourismTitle: "ቱሪዝም እና ባህላዊ ቅርስ",
@@ -151,25 +157,25 @@ const translations = {
   or: {
     // Metadata
     websiteName: "Bokkuu Shanan",
-    subTitle: "Magaalaa Adaamaa Kutaa Magaalaa Bokkuu Shanan",
+    subTitle: "Magaalaa Adaamaattii Kutaa Magaalaa",
     
     // Header
-    home: "Mana",
+    home: "Seensa",
     aboutUs: "Waa'ee Keenya",
-    services: "Tajaajilawwan",
+    services: "Tajaajila",
     news: "Oduu",
     resources: "Qabeenya",
     tourism: "Turizimii",
-    contact: "Nu Quunnamaa",
+    contact: "Quunnamtii",
     staffPortal: "Portaalii Hojjattootaa",
     language: "Afaan",
     
     // About section
-    aboutTitle: "Waa'ee Magaalattii Xiqqoo Boku Shanan",
+    aboutTitle: "Waa'ee Bulchiinsa Magaalaa Adaamaa Kutaa Magaalaa Bokkuu Shanan",
     aboutDescription: "Mul'ata keenya, ergama, hogganummaa, fi tarsiimoo gara fuulduraatti hawaasa keenya ijaaruu baraa.",
     vision: "Mul'ata",
     mission: "Ergama",
-    visionText: "Magaalattii xiqqoo haala ifaa, itti gaafatamamummaa qabu, fi bulchiinsa gaarii qabuun lammiilee dandeessisu fi misooma dhaabbataa jajjabeessu ta'uu.",
+    visionText: "Kutaa Magaalaa haala ifaa, itti gaafatamamummaa qabu, fi bulchiinsa gaarii qabuun lammiilee dandeessisu fi misooma dhaabbataa jajjabeessu ta'uu.",
     missionText: "Tajaajila hawaasaa wal qixa ta'e, amanamaa, fi bu'a qabeessa kanneen furmaata dijitaalaa fi hirmaannaa lammiitiin kennamu itti gaafatamummaadhaan kennuuf kutannoo qabna.",
     learnMore: "Waa'ee Keenya Caalaatti Baradhu",
     ourLeadership: "Hoggantoota Keenya",
@@ -187,6 +193,14 @@ const translations = {
     newsDescription: "Oduu, waan dhufaa jiru, fi beeksisawwan haaraa Bulchiinsa Magaalattii Xiqqoo Boku Shanan irraa hordofi.",
     readMore: "Caalaatti Dubbisi",
     viewAllNews: "Oduu Hunda Ilaali",
+    
+    // Project section
+    projects: "Pirojektiiwwan",
+    roadConstruction: "Ijaarsa Daandii",
+    waterSupply: "Saffisa Bishaanii",
+    schoolBuildings: "Mana Barnootaa",
+    communityCenters: "Garee Hawaasaa",
+    greenSpaces: "Bakki Magariisaa",
     
     // Tourism section
     tourismTitle: "Turizimii fi Aadaa Dhaala",

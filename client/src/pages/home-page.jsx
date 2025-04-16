@@ -7,6 +7,7 @@ import ServicesSection from "../components/services-section";
 import NewsSection from "../components/news-section";
 import TourismSection from "../components/tourism-section";
 import ContactSection from "../components/contact-section";
+import MainStatsSection from "../components/main-stats-section";
 
 export default function HomePage() {
   useEffect(() => {
@@ -18,6 +19,7 @@ export default function HomePage() {
       <Header />
       <main className="flex-grow">
         <HeroSlider />
+        <MainStatsSection />
         <AboutSection />
         <ServicesSection />
         <NewsSection />

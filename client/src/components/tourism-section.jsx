@@ -1,34 +1,52 @@
 import { useState } from 'react';
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "./ui/button";
+import { Card, CardContent } from "./ui/card";
 import { 
   ChevronLeft, 
   ChevronRight, 
   Map, 
   ArrowRight 
 } from "lucide-react";
+import { Dialog, DialogTrigger, DialogContent } from "./ui/dialog";
+import pic1 from '../assets/pic1.png';
+import pic2 from '../assets/pic2.png';
+import pic3 from '../assets/pic3.png';
+import pic4 from '../assets/pic4.png';
+import pic5 from '../assets/pic5.png';
 
 export default function TourismSection() {
   const [activeSlide, setActiveSlide] = useState(0);
-  
+
   const tourismSlides = [
     {
       id: 1,
-      image: "https://images.unsplash.com/photo-1580746738879-e0b173dbc327?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&h=800&q=80",
-      title: "Ancient Historical Site",
-      description: "Discover the rich cultural heritage of this historical site dating back several centuries, showcasing the region's architectural brilliance and cultural significance."
+      image: pic1,
+      title: "City Center",
+      description: "A view of the vibrant city center and modern buildings."
     },
     {
       id: 2,
-      image: "https://images.unsplash.com/photo-1516496636080-14fb876e029d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&h=800&q=80",
-      title: "Natural Wonders of Boku Shanan",
-      description: "Experience breathtaking landscapes, lush greenery, and captivating scenery that make Boku Shanan a natural paradise for visitors and nature enthusiasts."
+      image: pic2,
+      title: "Royal Square",
+      description: "A landmark at Royal Square, a hub of activity and culture."
     },
     {
       id: 3,
-      image: "https://images.unsplash.com/photo-1528702748617-c64d49f918af?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&h=800&q=80",
-      title: "Cultural Festival Celebration",
-      description: "Immerse yourself in the vibrant cultural celebrations that showcase the rich traditions, music, dance, and cuisine of the Boku Shanan community."
+      image: pic3,
+      title: "Modern Architecture",
+      description: "Showcasing the unique architecture and development in the area."
+    },
+    {
+      id: 4,
+      image: pic4,
+      title: "Green Parks",
+      description: "Beautiful parks and recreational areas for families and visitors."
+    },
+    {
+      id: 5,
+      image: pic5,
+      title: "Cultural Heritage",
+      description: "Sites of historical and cultural significance in the sub-city."
     }
   ];
 
@@ -37,21 +55,21 @@ export default function TourismSection() {
       id: 1,
       title: "Historical Sites",
       description: "Explore ancient monuments, historical buildings, and cultural landmarks that tell the story of our region's rich past.",
-      image: "https://images.unsplash.com/photo-1524675053444-52c3ca294ad2?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80",
+      image: pic1,
       link: "#"
     },
     {
       id: 2,
       title: "Natural Attractions",
       description: "Discover the breathtaking natural landscapes, parks, wildlife areas, and scenic viewpoints in and around our sub-city.",
-      image: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80",
+      image: pic2,
       link: "#"
     },
     {
       id: 3,
       title: "Cultural Experiences",
       description: "Immerse yourself in local traditions, festivals, cuisine, and artisan crafts that showcase our community's cultural heritage.",
-      image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&h=400&q=80",
+      image: pic3,
       link: "#"
     }
   ];
@@ -73,7 +91,6 @@ export default function TourismSection() {
             Discover the rich cultural heritage, historical sites, and natural attractions of Boku Shanan Sub-City.
           </p>
         </div>
-        
         {/* Tourism Highlights Slider */}
         <div className="relative mb-16">
           <div className="overflow-hidden rounded-xl">
@@ -84,11 +101,25 @@ export default function TourismSection() {
               {tourismSlides.map((slide) => (
                 <div key={slide.id} className="min-w-full relative">
                   <div className="w-full h-[500px]">
-                    <img 
-                      src={slide.image} 
-                      alt={slide.title} 
-                      className="w-full h-full object-cover"
-                    />
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <img 
+                          src={slide.image} 
+                          alt={slide.title} 
+                          className="w-full h-full object-cover cursor-pointer transition-transform duration-200 hover:scale-105"
+                          tabIndex={0}
+                          role="button"
+                          aria-label={`Expand photo for ${slide.title}`}
+                        />
+                      </DialogTrigger>
+                      <DialogContent className="max-w-2xl w-full bg-white p-0">
+                        <img 
+                          src={slide.image} 
+                          alt={slide.title} 
+                          className="w-full h-auto object-contain rounded-lg"
+                        />
+                      </DialogContent>
+                    </Dialog>
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-8 text-white">
                     <h3 className="text-3xl font-bold mb-3">{slide.title}</h3>
@@ -101,7 +132,6 @@ export default function TourismSection() {
               ))}
             </div>
           </div>
-          
           {/* Navigation Arrows */}
           <Button 
             variant="secondary" 
@@ -119,7 +149,6 @@ export default function TourismSection() {
           >
             <ChevronRight className="h-6 w-6" />
           </Button>
-          
           {/* Indicators */}
           <div className="flex justify-center mt-4 space-x-2">
             {tourismSlides.map((_, index) => (
@@ -131,17 +160,30 @@ export default function TourismSection() {
             ))}
           </div>
         </div>
-        
         {/* Tourism Categories */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {tourismCategories.map((category) => (
             <Card key={category.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300">
               <div className="h-56 w-full overflow-hidden">
-                <img 
-                  src={category.image} 
-                  alt={category.title} 
-                  className="w-full h-full object-cover"
-                />
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <img 
+                      src={category.image} 
+                      alt={category.title} 
+                      className="w-full h-full object-cover cursor-pointer transition-transform duration-200 hover:scale-105"
+                      tabIndex={0}
+                      role="button"
+                      aria-label={`Expand photo for ${category.title}`}
+                    />
+                  </DialogTrigger>
+                  <DialogContent className="max-w-2xl w-full bg-white p-0">
+                    <img 
+                      src={category.image} 
+                      alt={category.title} 
+                      className="w-full h-auto object-contain rounded-lg"
+                    />
+                  </DialogContent>
+                </Dialog>
               </div>
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold text-gray-800 mb-3">{category.title}</h3>
@@ -155,7 +197,6 @@ export default function TourismSection() {
             </Card>
           ))}
         </div>
-        
         {/* Tourism Map */}
         <div className="mt-16 bg-white rounded-lg shadow-md p-6">
           <h3 className="text-2xl font-semibold text-primary mb-6 text-center">Interactive Tourism Map</h3>
@@ -167,7 +208,6 @@ export default function TourismSection() {
             </div>
           </div>
         </div>
-        
         <div className="text-center mt-12">
           <Button className="bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-8 rounded-md transition duration-300">
             View Tourism Guide

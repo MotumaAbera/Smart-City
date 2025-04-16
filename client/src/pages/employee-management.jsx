@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useQuery, useMutation } from "@tanstack/react-query";
-import { queryClient, apiRequest } from "@/lib/queryClient";
-import { useToast } from "@/hooks/use-toast";
+import { queryClient, apiRequest } from "../lib/queryClient";
+import { useToast } from "../hooks/use-toast";
 import Sidebar from "../components/admin/sidebar";
 import EmployeeForm from "../components/admin/employee-form";
 import { 
@@ -10,10 +10,10 @@ import {
   CardDescription, 
   CardHeader, 
   CardTitle 
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+} from "../components/ui/card";
+import { Button } from "../components/ui/button";
+import { Input } from "../components/ui/input";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/ui/tabs";
 import { 
   Table, 
   TableBody, 
@@ -21,22 +21,22 @@ import {
   TableHead, 
   TableHeader, 
   TableRow 
-} from "@/components/ui/table";
+} from "../components/ui/table";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
-} from "@/components/ui/dialog";
+} from "../components/ui/dialog";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+} from "../components/ui/dropdown-menu";
+import { Avatar, AvatarFallback } from "../components/ui/avatar";
 import { Loader2, Search, UserPlus, MoreVertical, Eye, Edit, Trash, Users } from "lucide-react";
 
 export default function EmployeeManagement() {
@@ -56,45 +56,7 @@ export default function EmployeeManagement() {
     queryFn: () => {
       // Fallback data if API fails
       return [
-        {
-          id: 1,
-          firstName: "Ahmed",
-          lastName: "Solomon",
-          position: "Chief Administrator",
-          department: "Administration",
-          email: "ahmed.solomon@bokushanan.gov.et",
-          phone: "+251911234567",
-          hireDate: "2021-06-15",
-          status: "active",
-          address: "Boku Shanan, Kebele 02",
-          emergencyContact: "Fatima Solomon, +251922345678",
-        },
-        {
-          id: 2,
-          firstName: "Sara",
-          lastName: "Tesfaye",
-          position: "Deputy Administrator",
-          department: "Administration",
-          email: "sara.tesfaye@bokushanan.gov.et",
-          phone: "+251911234568",
-          hireDate: "2021-08-01",
-          status: "active",
-          address: "Boku Shanan, Kebele 01",
-          emergencyContact: "Dawit Tesfaye, +251922345679",
-        },
-        {
-          id: 3,
-          firstName: "Daniel",
-          lastName: "Bekele",
-          position: "Director",
-          department: "Urban Development",
-          email: "daniel.bekele@bokushanan.gov.et",
-          phone: "+251911234569",
-          hireDate: "2022-01-10",
-          status: "active",
-          address: "Boku Shanan, Kebele 03",
-          emergencyContact: "Meron Bekele, +251922345680",
-        },
+      
         {
           id: 4,
           firstName: "Tigist",

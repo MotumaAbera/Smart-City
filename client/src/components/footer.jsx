@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           <div>
             <div className="flex items-center space-x-3 mb-6">
               <div className="h-12 w-12 rounded-full border-2 border-white/30 bg-white/10 flex items-center justify-center">
@@ -44,7 +44,6 @@ export default function Footer() {
               <li><a href="#news" className="text-gray-400 hover:text-white transition duration-300">News & Updates</a></li>
               <li><a href="#tourism" className="text-gray-400 hover:text-white transition duration-300">Tourism & Heritage</a></li>
               <li><a href="#contact" className="text-gray-400 hover:text-white transition duration-300">Contact Us</a></li>
-              <li><Link href="/auth" className="text-gray-400 hover:text-white transition duration-300">Staff Portal</Link></li>
             </ul>
           </div>
           
@@ -78,15 +77,35 @@ export default function Footer() {
               </li>
               <li className="flex items-start">
                 <Clock className="h-5 w-5 text-accent-light mr-3 shrink-0" />
-                <span className="text-gray-400">Mon-Fri: 8:30 AM - 5:00 PM<br />Sat: 9:00 AM - 1:00 PM</span>
+                <span className="text-gray-400">Mon-Fri: 8:30 AM - 5:00 PM<br /></span>
               </li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold text-lg mb-6">Our Location</h4>
+            <div className="rounded-lg overflow-hidden shadow-lg mb-4">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d2152.704951987981!2d39.277!3d8.52175!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2set!4v1744713280622!5m2!1sen!2set"
+                width="100%"
+                height="180"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Boku Shanan Location"
+              ></iframe>
+            </div>
+            <ul className="space-y-2 text-gray-400 text-sm">
+              <li className="flex items-start"><MapPin className="h-4 w-4 text-accent-light mr-2 shrink-0" />Boku Shanan Administration Building</li>
+              <li className="flex items-start"><Phone className="h-4 w-4 text-accent-light mr-2 shrink-0" />+251 95 101 2219</li>
+              <li className="flex items-start"><Mail className="h-4 w-4 text-accent-light mr-2 shrink-0" />info@bokushanan.gov.et</li>
             </ul>
           </div>
         </div>
         
         <div className="border-t border-gray-700 pt-8">
           <div className="flex flex-col md:flex-row md:justify-between items-center">
-            <p className="text-gray-400 text-sm mb-4 md:mb-0">© {currentYear} Boku Shanan Sub-City Administration. All rights reserved.</p>
+            <p className="text-gray-400 text-sm mb-4 md:mb-0"> {currentYear} @Boku Shanan Sub-City Administration. All rights reserved.</p>
             <div className="flex flex-wrap justify-center gap-4">
               <a href="#" className="text-gray-400 text-sm hover:text-white transition duration-300">Privacy Policy</a>
               <a href="#" className="text-gray-400 text-sm hover:text-white transition duration-300">Terms of Service</a>

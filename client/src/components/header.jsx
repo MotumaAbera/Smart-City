@@ -5,11 +5,12 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Button } from "@/components/ui/button";
+} from "./ui/dropdown-menu";
+import { Button } from "./ui/button";
 import { Menu, X, ChevronDown, Mail, Phone } from "lucide-react";
 import { useLanguage } from "@/hooks/use-language";
-import logo from '@assets/logo.png';
+import logo from '../assets/logo.png';
+import { Dialog, DialogTrigger, DialogContent } from "./ui/dialog";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -37,27 +38,31 @@ export default function Header() {
     { name: t('home'), href: "/" },
     { 
       name: t('aboutUs'), 
-      href: "#about",
+      href: "/about",
       dropdown: [
-        { name: t('vision') + " & " + t('mission'), href: "#about" },
-        { name: t('ourLeadership'), href: "#about" },
-        { name: "Organizational Structure", href: "#about" },
-        { name: "History", href: "#about" }
+        { name: t('vision') + " & " + t('mission'), href: "/about#vision-mission" },
+        { name: t('ourLeadership'), href: "/about#leadership" },
+        { name: "Organizational Structure", href: "/about#structure" },
+        { name: "History", href: "/about#history" }
       ]
     },
-    { name: t('services'), href: "#services" },
-    { name: t('news'), href: "#news" },
+    { name: t('services'), href: "/services" },
+    { name: t('news'), href: "/news" },
     { 
       name: t('resources'), 
-      href: "#resources",
+      href: "/resources",
       dropdown: [
-        { name: "Documents", href: "#resources" },
-        { name: "Forms", href: "#resources" },
-        { name: "Reports", href: "#resources" }
+        { name: "Documents", href: "/resources/documents" },
+        { name: "Forms", href: "/resources/forms" },
+        { name: "Reports", href: "/resources/reports" }
       ]
     },
-    { name: t('tourism'), href: "#tourism" },
-    { name: t('contact'), href: "#contact" }
+    { 
+      name: t('projects'), 
+      href: "/projects" 
+    },
+    { name: t('tourism'), href: "/tourism" },
+    { name: t('contact'), href: "/contact" }
   ];
 
   const toggleMobileMenu = () => {
@@ -67,34 +72,40 @@ export default function Header() {
   const handleNav = (href) => {
     setMobileMenuOpen(false);
     
-    if (href.startsWith('#')) {
-      // Smooth scroll to the section
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+    if (href.includes('#')) {
+      // If URL contains a hash, navigate to the page first then scroll
+      const [path, hash] = href.split('#');
+      if (path && path !== window.location.pathname) {
+        navigate(path);
       }
+      // Scroll to section after a short delay to ensure the page has loaded
+      setTimeout(() => {
+        const element = document.querySelector(`#${hash}`);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
     } else {
       navigate(href);
     }
   };
 
   return (
-    <header className={`sticky top-0 z-50 transition-shadow ${scrolled ? 'shadow-md' : ''}`}>
+    <header className={`sticky top-0 z-50 transition-shadow bg-gray-900 ${scrolled ? 'shadow-md' : ''}`}>
       {/* Top Bar */}
       <div className="bg-primary-dark text-white py-2">
         <div className="container mx-auto px-4 flex justify-between items-center">
           <div className="flex items-center space-x-4">
-            <a href="mailto:info@bokushanan.gov.et" className="text-sm hover:text-accent-light flex items-center">
+            <a href="mailto:info@bokushanan.com" className="text-sm hover:text-accent-light flex items-center">
               <Mail className="h-4 w-4 mr-1" />
-              info@bokushanan.gov.et
+              info@bokushanan.com
             </a>
-            <a href="tel:+251 95 101 2219" className="text-sm hover:text-accent-light flex items-center">
+            <a href="tel:+251951012219" className="text-sm hover:text-accent-light flex items-center">
               <Phone className="h-4 w-4 mr-1" />
               +251 95 101 2219
             </a>
           </div>
           <div className="flex items-center space-x-4">
-            <Link href="/auth" className="text-sm hover:text-accent-light">Staff Portal</Link>
             <div className="flex items-center space-x-2">
               <button 
                 onClick={() => changeLanguage('en')}
@@ -104,17 +115,17 @@ export default function Header() {
               </button>
               <span className="text-white/50">|</span>
               <button 
-                onClick={() => changeLanguage('am')}
-                className={`text-sm px-2 py-1 rounded ${language === 'am' ? 'bg-white/20 text-white font-medium' : 'text-white/80 hover:text-white'}`}
-              >
-                አማ
-              </button>
-              <span className="text-white/50">|</span>
-              <button 
                 onClick={() => changeLanguage('or')}
                 className={`text-sm px-2 py-1 rounded ${language === 'or' ? 'bg-white/20 text-white font-medium' : 'text-white/80 hover:text-white'}`}
               >
                 OR
+              </button>
+              <span className="text-white/50">|</span>
+              <button 
+                onClick={() => changeLanguage('am')}
+                className={`text-sm px-2 py-1 rounded ${language === 'am' ? 'bg-white/20 text-white font-medium' : 'text-white/80 hover:text-white'}`}
+              >
+                አማ
               </button>
             </div>
           </div>
@@ -127,7 +138,14 @@ export default function Header() {
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-3">
               <div className="h-16 w-16 flex items-center justify-center">
-                <img src={logo} alt="Boku Shanan Logo" className="h-full w-full object-contain" />
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <img src={logo} alt="Boku Shanan Logo" className="h-10 w-auto cursor-pointer transition-transform duration-200 hover:scale-105" tabIndex={0} role="button" aria-label="Expand Boku Shanan logo" />
+                  </DialogTrigger>
+                  <DialogContent className="max-w-2xl w-full bg-white p-0">
+                    <img src={logo} alt="Boku Shanan Logo" className="w-full h-auto object-contain rounded-lg" />
+                  </DialogContent>
+                </Dialog>
               </div>
               <div>
                 <h1 className="font-bold text-lg sm:text-xl md:text-2xl text-primary">{t('websiteName')}</h1>
@@ -155,7 +173,7 @@ export default function Header() {
                     </DropdownMenuContent>
                   </DropdownMenu>
                 ) : (
-                  <a 
+                  <Link 
                     key={link.name} 
                     href={link.href} 
                     className="font-medium text-gray-800 hover:text-primary"
@@ -165,7 +183,7 @@ export default function Header() {
                     }}
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 )
               ))}
             </nav>
@@ -187,7 +205,7 @@ export default function Header() {
             <div className="md:hidden mt-4 pb-4 border-t pt-4">
               <nav className="flex flex-col space-y-4">
                 {navLinks.map((link) => (
-                  <a
+                  <Link
                     key={link.name}
                     href={link.href}
                     className="font-medium text-gray-800 hover:text-primary px-4 py-2 border-b"
@@ -198,35 +216,31 @@ export default function Header() {
                     }}
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 ))}
                 
-                {/* Additional Links */}
+                {/* Language buttons in mobile menu */}
                 <div className="pt-2">
-                  <Link href="/auth" className="block font-medium text-gray-800 hover:text-primary mb-4">
-                    {t('staffPortal')}
-                  </Link>
-                  <p className="text-sm font-medium mb-2">{t('language')}</p>
-                  <div className="flex items-center space-x-2 pl-2">
+                  <div className="flex items-center space-x-2">
                     <button 
                       onClick={() => changeLanguage('en')}
-                      className={`text-sm px-2 py-1 rounded ${language === 'en' ? 'bg-primary/10 text-primary font-medium' : 'text-gray-600 hover:text-primary'}`}
+                      className={`text-sm px-2 py-1 rounded ${language === 'en' ? 'bg-white/20 text-white font-medium' : 'text-white/80 hover:text-white'}`}
                     >
                       EN
                     </button>
-                    <span className="text-gray-400">|</span>
-                    <button 
-                      onClick={() => changeLanguage('am')}
-                      className={`text-sm px-2 py-1 rounded ${language === 'am' ? 'bg-primary/10 text-primary font-medium' : 'text-gray-600 hover:text-primary'}`}
-                    >
-                      አማ
-                    </button>
-                    <span className="text-gray-400">|</span>
+                    <span className="text-white/50">|</span>
                     <button 
                       onClick={() => changeLanguage('or')}
-                      className={`text-sm px-2 py-1 rounded ${language === 'or' ? 'bg-primary/10 text-primary font-medium' : 'text-gray-600 hover:text-primary'}`}
+                      className={`text-sm px-2 py-1 rounded ${language === 'or' ? 'bg-white/20 text-white font-medium' : 'text-white/80 hover:text-white'}`}
                     >
                       OR
+                    </button>
+                    <span className="text-white/50">|</span>
+                    <button 
+                      onClick={() => changeLanguage('am')}
+                      className={`text-sm px-2 py-1 rounded ${language === 'am' ? 'bg-white/20 text-white font-medium' : 'text-white/80 hover:text-white'}`}
+                    >
+                      አማ
                     </button>
                   </div>
                 </div>

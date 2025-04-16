@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { Button } from "./ui/button";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "./ui/tabs";
 import { 
   FileText, Users, Building, Home, School, 
   Hospital, MessageSquare, HeartHandshake, 
@@ -11,6 +11,12 @@ import {
 
 export default function ServicesSection() {
   const [activeTab, setActiveTab] = useState("citizen");
+  const [expandedServices, setExpandedServices] = useState({
+    citizen: false,
+    business: false,
+    property: false,
+    community: false
+  });
   
   const services = {
     citizen: [
@@ -166,11 +172,12 @@ export default function ServicesSection() {
               Community Services
             </TabsTrigger>
           </TabsList>
-          
+
+          {/* Responsive: make services grid single-column on small screens, avoid overlap */}
           {Object.entries(services).map(([key, serviceList]) => (
             <TabsContent key={key} value={key} className="mt-0">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {serviceList.map(service => (
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {(expandedServices[key] ? serviceList : serviceList.slice(0, 3)).map(service => (
                   <div key={service.id} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition duration-300">
                     <div className="flex items-start">
                       <div className="mr-4">
@@ -188,15 +195,14 @@ export default function ServicesSection() {
                   </div>
                 ))}
               </div>
+              <div className="text-center mt-6">
+                <Button className="bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-8 rounded-md transition duration-300" onClick={() => setExpandedServices({ ...expandedServices, [key]: !expandedServices[key] })}>
+                  {expandedServices[key] ? 'Show Less Services' : 'View All Services'}
+                </Button>
+              </div>
             </TabsContent>
           ))}
         </Tabs>
-        
-        <div className="text-center">
-          <Button className="bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-8 rounded-md transition duration-300">
-            View All Services
-          </Button>
-        </div>
       </div>
     </section>
   );

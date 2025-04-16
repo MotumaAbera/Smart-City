@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
@@ -28,8 +28,8 @@ export default function ContactSection() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleCheckboxChange = (e) => {
-    setFormData(prev => ({ ...prev, consent: e.target.checked }));
+  const handleCheckboxChange = (checked) => {
+    setFormData(prev => ({ ...prev, consent: checked }));
   };
 
   const handleSelectChange = (value) => {
@@ -76,7 +76,7 @@ export default function ContactSection() {
                     <h4 className="font-medium text-gray-800 mb-1">Visit Us</h4>
                     <p className="text-gray-500">Boku Shanan Administration Building</p>
                     <p className="text-gray-500">Main Street, Central District</p>
-                    <p className="text-gray-500">Boku Shanan, Ethiopia</p>
+                    <p className="text-gray-500">Boku Shanan, Adama, Ethiopia</p>
                   </div>
                 </div>
                 
@@ -105,7 +105,7 @@ export default function ContactSection() {
                   <div>
                     <h4 className="font-medium text-gray-800 mb-1">Office Hours</h4>
                     <p className="text-gray-500">Monday - Friday: 8:30 AM - 5:00 PM</p>
-                    <p className="text-gray-500">Saturday: 9:00 AM - 1:00 PM</p>
+                    <p className="text-gray-500">Saturday: Closed</p>
                     <p className="text-gray-500">Sunday: Closed</p>
                   </div>
                 </div>
